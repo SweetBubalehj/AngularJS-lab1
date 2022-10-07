@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="./node_modules/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="./src/assets/style.css" />
+</head>
+
+<body ng-app="listApp">
+  <div class="container" ng-controller="listCtrl">
+    <table>
+      <tr>
+        <th colspan="2">
+          <label for="limit">
+            <h3>Продукты в корзине</h3>
+          </label>
+          <select ng-model="numberOfProducts" name="limit" id="limit">
+            <option selected="selected" ng-repeat="product in products" value="{{$index+1}}">
+              {{$index+1}}
+            </option>
+          </select>
+        </th>
+
+        <th colspan="2">
+          <label for="category" class="table__category">
+            <h3>Тип категории</h3>
+          </label>
+          <select ng-model="selectedCategory" name="category" id="category">
+            <option selected="selected" ng-repeat="category in categories" value="{{category}}">
+              {{category}}
+            </option>
+          </select>
+        </th>
+      <tr>
+        <th>Имя</th>
+        <th>Цена</th>
+        <th>Категория</th>
+        <th>Кол-во</th>
+      </tr>
+      <tr
+        ng-repeat="product in products | limitTo: numberOfProducts | filter:selectedCategory:getCategory | orderBy: 'price'">
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.count}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <table ng-controller="cityCtrl">
+    <tbody>
+      <tr>
+        <th style="text-align: center;" colspan="2">Из списка выбери город и увидишь страну!</th>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <h3 style="text-align: center;">Город:
+            <select name="city" ng-model="selectedCity" ng-options="country.city for country in countries"></select>
+          </h3>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <p ng-show="selectedCity">Название страны: {{selectedCity.country ? selectedCity.country :
+            'Неизвестно'}}</p>
+        </td>
+        <td>
+          <p>Название города: {{selectedCity.city}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table ng-controller="inputCtrl">
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h3 style="text-align: center;">
+            Введите текст!
+          </h3>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <button ng-click="setEnabled()" class="main-btn">Изменить текст</button>
+        </td>
+        <td>
+          <input ng-disabled="!isDisabled" type="text" ng-model="userText">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <p ng-if="isDisabled">{{userText}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>

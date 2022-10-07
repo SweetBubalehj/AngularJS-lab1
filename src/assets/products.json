@@ -1,0 +1,74 @@
+[
+   {
+      "name": "Куринная грудка",
+      "price": 5.20,
+      "category": "Мясо",
+      "count": 2
+   },
+   {
+      "name": "Карась",
+      "price": 12.00,
+      "category": "Рыба",
+      "count": 4
+   },
+   {
+      "name": "Свино-говяжий фарш",
+      "price": 13.6,
+      "category": "Мясо",
+      "count": 5
+   },
+   {
+      "name": "Сливочное масло",
+      "price": 4.70,
+      "category": "Молочка",
+      "count": 4
+   },
+   {
+      "name": "Тунец",
+      "price": 23.1,
+      "category": "Рыба",
+      "count": 9
+   },
+   {
+      "name": "Сом",
+      "price": 25.30,
+      "category": "Рыба",
+      "count": 2
+   },
+   {
+      "name": "Корюшка",
+      "price": 12.30,
+      "category": "Рыба",
+      "count": 4
+   },
+   {
+      "name": "Говяжая костица",
+      "price": 16.20,
+      "category": "Мясо",
+      "count": 2
+   },
+   {
+      "name": "Свиная костица",
+      "price": 10.20,
+      "category": "Мясо",
+      "count": 2
+   },
+   {
+      "name": "Сыр 'Ricotta'",
+      "price": 12.40,
+      "category": "Молочка",
+      "count": 10
+   },
+   {
+      "name": "Сливки",
+      "price": 3.50,
+      "category": "Молочка",
+      "count": 3
+   },
+   {
+      "name": "Молоко",
+      "price": 6,
+      "category": "Молочка",
+      "count": 3
+   }
+]
